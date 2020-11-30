@@ -1,0 +1,10 @@
+{
+    "products": [{
+        "id":"dress1",
+        "title": "Wreath",
+        "image": "/images/wreath1.jpg",
+        "description": "description of wreath",
+        "price": 20,
+        "decorStyle": ["wreaths", "knick knacks", "lights"]
+    }]
+}
