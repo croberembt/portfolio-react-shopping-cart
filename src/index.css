@@ -1,13 +1,68 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Source+Code+Pro&display=swap');
+
+
+/* elements */
+
+a {
+    text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a:hover {
+    color: midnightblue;
 }
+
+body, #root {
+    height: 100vh; 
+    margin: 0;
+}
+
+body, input, select, textarea {
+    font-size: 1.6rem;
+    font-family: 'Source Code Pro', monospace; 
+}
+
+footer {
+    grid-area: footer;
+    background-color: #68B2A0; 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+header {
+    grid-area: header;
+    background-color: #68B2A0; 
+    color: white;
+    padding: 1rem;
+}
+
+header a {
+    color: white;
+}
+
+html {
+    font-size: 125%;
+    box-sizing: border-box; 
+}
+
+main {
+    grid-area: main;
+    background-color: #68B2A0;
+    color: white;
+}
+
+/* classes */
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header'
+    'main'
+    'footer';
+    grid-template-rows: 5rem 1fr 5rem;
+    grid-template-columns: 1rf; 
+    height: 100%;
+}
+
+/* ids */
