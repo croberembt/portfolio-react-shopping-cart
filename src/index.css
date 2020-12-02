@@ -5,6 +5,7 @@
 
 a {
     text-decoration: none;
+    color: red;
 }
 
 a:hover {
@@ -54,6 +55,19 @@ main {
 }
 
 /* classes */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+}
 
 .grid-container {
     display: grid;

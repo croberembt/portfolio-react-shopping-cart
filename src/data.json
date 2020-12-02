@@ -38,7 +38,7 @@
             "image": "/images/knickknack2.jpg",
             "description": "description of knickknack2",
             "price": 20,
-            "decorStyle": ["knick knacks",]
+            "decorStyle": ["knick knacks"]
         },
         {
             "_id": "knickknack3",
@@ -49,28 +49,28 @@
             "decorStyle": ["knick knacks"]
         },
         {
-            "_id": "lights1",
-            "title": "LIghts1",
-            "image": "/images/lights1.jpg",
-            "description": "description of lights1",
+            "_id": "ornament1",
+            "title": "Ornament1",
+            "image": "/images/ornament1.jpg",
+            "description": "description of ornament1",
             "price": 5,
-            "decorStyle": ["lights"]
+            "decorStyle": ["ornaments"]
         },
         {
-            "_id": "lights2",
-            "title": "Lights2",
-            "image": "/images/lights2.jpg",
-            "description": "description of lights2",
+            "_id": "ornament2",
+            "title": "Ornament2",
+            "image": "/images/ornament2.jpg",
+            "description": "description of ornament2",
             "price": 10,
-            "decorStyle": ["lights"]
+            "decorStyle": ["ornaments"]
         },
         {
-            "_id": "lights3",
-            "title": "Lights3",
-            "image": "/images/lights3.jpg",
-            "description": "description of lights3",
+            "_id": "ornament3",
+            "title": "Ornament3",
+            "image": "/images/ornament3.jpg",
+            "description": "description of ornament3",
             "price": 15,
-            "decorStyle": ["lights"]
+            "decorStyle": ["ornaments"]
         }
     ]
 }
