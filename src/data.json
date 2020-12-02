@@ -1,10 +1,76 @@
 {
-    "products": [{
-        "id":"dress1",
-        "title": "Wreath",
-        "image": "/images/wreath1.jpg",
-        "description": "description of wreath",
-        "price": 20,
-        "decorStyle": ["wreaths", "knick knacks", "lights"]
-    }]
+    "products": [
+        {
+            "_id": "wreath1",
+            "title": "Wreath1",
+            "image": "/images/wreath1.jpg",
+            "description": "description of wreath1",
+            "price": 20,
+            "decorStyle": ["wreaths"]
+        },
+        {
+            "_id": "wreath2",
+            "title": "Wreath2",
+            "image": "/images/wreath2.jpg",
+            "description": "description of wreath2",
+            "price": 25,
+            "decorStyle": ["wreaths"]
+        },
+        {
+            "_id": "wreath3",
+            "title": "Wreath3",
+            "image": "/images/wreath3.jpg",
+            "description": "description of wreath3",
+            "price": 30,
+            "decorStyle": ["wreaths"]
+        },
+        {
+            "_id": "knickknack1",
+            "title": "Knickknack1",
+            "image": "/images/knickknack1.jpg",
+            "description": "description of knick-knack1",
+            "price": 15,
+            "decorStyle": ["knick knacks"]
+        },
+        {
+            "_id": "knickknack2",
+            "title": "Knickknack2",
+            "image": "/images/knickknack2.jpg",
+            "description": "description of knickknack2",
+            "price": 20,
+            "decorStyle": ["knick knacks",]
+        },
+        {
+            "_id": "knickknack3",
+            "title": "Knicknack3",
+            "image": "/images/knickknack3.jpg",
+            "description": "description of knickknack3",
+            "price": 25,
+            "decorStyle": ["knick knacks"]
+        },
+        {
+            "_id": "lights1",
+            "title": "LIghts1",
+            "image": "/images/lights1.jpg",
+            "description": "description of lights1",
+            "price": 5,
+            "decorStyle": ["lights"]
+        },
+        {
+            "_id": "lights2",
+            "title": "Lights2",
+            "image": "/images/lights2.jpg",
+            "description": "description of lights2",
+            "price": 10,
+            "decorStyle": ["lights"]
+        },
+        {
+            "_id": "lights3",
+            "title": "Lights3",
+            "image": "/images/lights3.jpg",
+            "description": "description of lights3",
+            "price": 15,
+            "decorStyle": ["lights"]
+        }
+    ]
 }
