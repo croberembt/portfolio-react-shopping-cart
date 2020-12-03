@@ -50,8 +50,23 @@ header a {
     padding-top: 1rem;
 }
 
+.filter-section {
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
 .sidebar {
     padding-top: 1rem;
+}
+
+.product-title a {
+    color: red;
+    font-weight: bold;
+}
+
+.product-title a:hover {
+    color: midnightblue;
 }
 
 /* ids */
