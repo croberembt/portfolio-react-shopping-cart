@@ -5,26 +5,24 @@
 
 a {
     text-decoration: none;
-    color: red;
 }
 
 a:hover {
     color: midnightblue;
+    text-decoration: none;
 }
 
 body, #root {
     height: 100vh; 
     margin: 0;
+    background-color: #68B2A0;
 }
 
 body, input, select, textarea {
-    font-size: 1.6rem;
     font-family: 'Source Code Pro', monospace; 
 }
 
 footer {
-    grid-area: footer;
-    background-color: #68B2A0; 
     color: white;
     display: flex;
     justify-content: center;
@@ -33,7 +31,6 @@ footer {
 }
 
 header {
-    grid-area: header;
     background-color: #68B2A0; 
     color: white;
     padding: 1rem;
@@ -43,40 +40,18 @@ header a {
     color: white;
 }
 
-html {
-    font-size: 125%;
-    box-sizing: border-box; 
-}
-
-main {
-    grid-area: main;
-    background-color: #68B2A0;
-    color: white;
-}
-
 /* classes */
 
-.content {
-    display: flex;
-    flex-wrap: wrap;
+.card-title {
+    color: 'red';
 }
 
 .main {
-    flex: 3;
+    padding-top: 1rem;
 }
 
 .sidebar {
-    flex: 1;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-areas: 'header'
-    'main'
-    'footer';
-    grid-template-rows: 5rem 1fr 5rem;
-    grid-template-columns: 1rf; 
-    height: 100%;
+    padding-top: 1rem;
 }
 
 /* ids */

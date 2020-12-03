@@ -1,5 +1,5 @@
 import React from 'react'; 
-import Products from './components/Products';
+import Products from './components/ProductComponent';
 import data from './data.json'; 
 
 class App extends React.Component {
@@ -13,17 +13,19 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div className='grid-container'>
+            <div className='container-fluid'>
                 <header>
-                    <a href='/'>Christmas Decor Online Store</a>
+                    <h2><a href='/'>Christmas Decor Online Store</a></h2>
                 </header>
                 <main>
-                    <div className='content'>
-                        <div className='main'>
-                            <Products products={this.state.products} />
-                        </div>
-                        <div className='sidebar'>
-                            My Cart
+                    <div className='container'>
+                        <div className='row'>
+                            <div className='col-8 main'>
+                                <Products products={this.state.products} />
+                            </div>
+                            <div className='col sidebar text-right' style={{color: 'white'}}>
+                                <h3>My Cart</h3>
+                            </div>
                         </div>
                     </div>
                 </main>

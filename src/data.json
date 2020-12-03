@@ -2,7 +2,7 @@
     "products": [
         {
             "_id": "wreath1",
-            "title": "Wreath1",
+            "title": "Rustic Wreath",
             "image": "/images/wreath1.jpg",
             "description": "description of wreath1",
             "price": 20,
@@ -10,7 +10,7 @@
         },
         {
             "_id": "wreath2",
-            "title": "Wreath2",
+            "title": "Red Bow Wreath",
             "image": "/images/wreath2.jpg",
             "description": "description of wreath2",
             "price": 25,
@@ -18,7 +18,7 @@
         },
         {
             "_id": "wreath3",
-            "title": "Wreath3",
+            "title": "Berry Wreath",
             "image": "/images/wreath3.jpg",
             "description": "description of wreath3",
             "price": 30,
@@ -26,15 +26,15 @@
         },
         {
             "_id": "knickknack1",
-            "title": "Knickknack1",
+            "title": "Skating Santa",
             "image": "/images/knickknack1.jpg",
-            "description": "description of knick-knack1",
+            "description": "description of knickknack1",
             "price": 15,
             "decorStyle": ["knick knacks"]
         },
         {
             "_id": "knickknack2",
-            "title": "Knickknack2",
+            "title": "Swedish Santa",
             "image": "/images/knickknack2.jpg",
             "description": "description of knickknack2",
             "price": 20,
@@ -42,15 +42,23 @@
         },
         {
             "_id": "knickknack3",
-            "title": "Knicknack3",
+            "title": "Vintage Reindeer",
             "image": "/images/knickknack3.jpg",
             "description": "description of knickknack3",
             "price": 25,
             "decorStyle": ["knick knacks"]
         },
         {
+            "_id": "knickknack4",
+            "title": "Vintage Santa",
+            "image": "/images/knickknack4.jpg",
+            "description": "description of knickknack4",
+            "price": 30,
+            "decorStyle": ["knick knacks"]
+        },
+        {
             "_id": "ornament1",
-            "title": "Ornament1",
+            "title": "Farm Ornament",
             "image": "/images/ornament1.jpg",
             "description": "description of ornament1",
             "price": 5,
@@ -58,7 +66,7 @@
         },
         {
             "_id": "ornament2",
-            "title": "Ornament2",
+            "title": "Frosted Ornament",
             "image": "/images/ornament2.jpg",
             "description": "description of ornament2",
             "price": 10,
@@ -66,7 +74,7 @@
         },
         {
             "_id": "ornament3",
-            "title": "Ornament3",
+            "title": "White Ornament",
             "image": "/images/ornament3.jpg",
             "description": "description of ornament3",
             "price": 15,
