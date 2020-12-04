@@ -24,10 +24,8 @@ body, input, select, textarea {
 
 footer {
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 header {
@@ -46,14 +44,28 @@ header a {
     color: 'red';
 }
 
+.footer-copyright {
+    text-align: center;
+}
+
 .main {
     padding-top: 1rem;
 }
 
 .filter-section {
-    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
     color: white;
     text-align: center;
+}
+
+select {
+    border-radius: 5px;
+    margin: .5rem;
+}
+
+.filter-result {
+    margin-bottom: .5rem;
 }
 
 .sidebar {

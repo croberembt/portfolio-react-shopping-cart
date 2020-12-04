@@ -8,10 +8,27 @@ class App extends React.Component {
         super();
         this.state = {
             products: data.products,
-            decorStyle: '',
+            productStyle: '',
             sort: ''
         }
     }
+
+    sortProducts(event) {
+        console.log(event.target.value); 
+    }
+
+    filterProducts = (event) => {
+        console.log(event.target.value); 
+        if(event.target.value === '') {
+            this.setState({productStyle: event.target.value, product:data.products}); 
+        } else {
+            this.setState({
+                productStyle: event.target.value,
+                products: data.products.filter(product => (product.productStyle.indexOf(event.target.value) >= 0))
+            })
+        }
+    }
+
     render() {
         return (
             <div className='container-fluid'>
@@ -21,8 +38,14 @@ class App extends React.Component {
                 <main>
                     <div className='container'>
                         <div className='row'>
-                            <div className='col-12 filter-section'>
-                                <FilterComponent count={this.state.products.length} /> 
+                            <div className='col-8 filter-section'>
+                                <FilterComponent 
+                                    count={this.state.products.length} 
+                                    productStyle={this.state.productStyle} 
+                                    sort={this.state.sort}
+                                    sortProducts={this.sortProducts}
+                                    filterProducts={this.filterProducts}
+                                /> 
                             </div>
                             <div className='col-8 main'>
                                 <ProductComponent products={this.state.products} />
@@ -33,7 +56,15 @@ class App extends React.Component {
                         </div>
                     </div>
                 </main>
-                <footer>© 2020, Calli Oberembt</footer>
+                <footer>
+                    <div className='container-fluid'>
+                        <div className='row'>
+                            <div className='col-8 footer-copyright'>
+                                © 2020, Calli Oberembt
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         );
     }

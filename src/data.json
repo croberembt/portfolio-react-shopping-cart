@@ -6,7 +6,7 @@
             "image": "/images/wreath1.jpg",
             "description": "This rustic wreath features dusted pine and large pinecones.",
             "price": 20.99,
-            "decorStyle": ["wreaths"]
+            "productStyle": ["wreaths"]
         },
         {
             "_id": "wreath2",
@@ -14,7 +14,7 @@
             "image": "/images/wreath2.jpg",
             "description": "This wreath has a large red bow for extra Christmas cheer.",
             "price": 25.99,
-            "decorStyle": ["wreaths"]
+            "productStyle": ["wreaths"]
         },
         {
             "_id": "wreath3",
@@ -22,7 +22,7 @@
             "image": "/images/wreath3.jpg",
             "description": "This wreath brings warmth with red berries and a ribbon.",
             "price": 30.99,
-            "decorStyle": ["wreaths"]
+            "productStyle": ["wreaths"]
         },
         {
             "_id": "knickknack1",
@@ -30,7 +30,7 @@
             "image": "/images/knickknack1.jpg",
             "description": "Santa in his red suit skating and carrying a pine tree.",
             "price": 10.99,
-            "decorStyle": ["knickknacks"]
+            "productStyle": ["knickknacks"]
         },
         {
             "_id": "knickknack2",
@@ -38,7 +38,7 @@
             "image": "/images/knickknack2.jpg",
             "description": "This Swedish Santa wears a white suit and stocking cap. ",
             "price": 10.99,
-            "decorStyle": ["knickknacks"]
+            "productStyle": ["knickknacks"]
         },
         {
             "_id": "knickknack3",
@@ -46,7 +46,7 @@
             "image": "/images/knickknack3.jpg",
             "description": "This cute reindeer is made of soft felt and natural wood.",
             "price": 5.99,
-            "decorStyle": ["knickknacks"]
+            "productStyle": ["knickknacks"]
         },
         {
             "_id": "knickknack4",
@@ -54,7 +54,7 @@
             "image": "/images/knickknack4.jpg",
             "description": "Cute ceramic Santa sparkling and ringing a Christmas bell.",
             "price": 7.99,
-            "decorStyle": ["knickknacks"]
+            "productStyle": ["knickknacks"]
         },
         {
             "_id": "ornament1",
@@ -62,7 +62,7 @@
             "image": "/images/ornament1.jpg",
             "description": "This Christmas ornament has a hand-painted farm scene.",
             "price": 5.99,
-            "decorStyle": ["ornaments"]
+            "productStyle": ["ornaments"]
         },
         {
             "_id": "ornament2",
@@ -70,7 +70,7 @@
             "image": "/images/ornament2.jpg",
             "description": "This frosted glass holiday ball has an snowflake design.",
             "price": 7.99,
-            "decorStyle": ["ornaments"]
+            "productStyle": ["ornaments"]
         },
         {
             "_id": "ornament3",
@@ -78,7 +78,7 @@
             "image": "/images/ornament3.jpg",
             "description": "White Christmas ornament with elegant design and glitter.",
             "price": 8.99,
-            "decorStyle": ["ornaments"]
+            "productStyle": ["ornaments"]
         }
     ]
 }
