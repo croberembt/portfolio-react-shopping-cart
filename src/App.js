@@ -9,25 +9,46 @@ class App extends React.Component {
         this.state = {
             products: data.products,
             productStyle: '',
-            sort: ''
+            productSort: ''
         }
     }
 
-    sortProducts(event) {
+    sortProducts = (event) => {
+        const productSort = event.target.value;
         console.log(event.target.value); 
-    }
+        this.setState((state) => ({
+            productSort: productSort,
+            products: this.state.products.slice().sort((a, b) => { 
+                if (productSort === 'lowest') { 
+                    if (a.price >= b.price) { 
+                        return 1; 
+                    } else {
+                        return -1; 
+                    }
+                } else if (productSort === 'highest') {
+                    if (a. price <= b.price) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                } else if (productSort === '') {
+                    return state; 
+                }
+            })
+        }));
+    };
 
     filterProducts = (event) => {
         console.log(event.target.value); 
         if(event.target.value === '') {
-            this.setState({productStyle: event.target.value, product:data.products}); 
+            this.setState({productStyle: event.target.value, products: data.products}); 
         } else {
             this.setState({
                 productStyle: event.target.value,
                 products: data.products.filter(product => (product.productStyle.indexOf(event.target.value) >= 0))
             })
         }
-    }
+    };
 
     render() {
         return (
@@ -42,7 +63,7 @@ class App extends React.Component {
                                 <FilterComponent 
                                     count={this.state.products.length} 
                                     productStyle={this.state.productStyle} 
-                                    sort={this.state.sort}
+                                    productSort={this.state.productSort}
                                     sortProducts={this.sortProducts}
                                     filterProducts={this.filterProducts}
                                 /> 

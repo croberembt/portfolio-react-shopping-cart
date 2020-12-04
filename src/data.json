@@ -5,7 +5,7 @@
             "title": "Rustic Wreath",
             "image": "/images/wreath1.jpg",
             "description": "This rustic wreath features dusted pine and large pinecones.",
-            "price": 20.99,
+            "price": 25.99,
             "productStyle": ["wreaths"]
         },
         {
@@ -13,7 +13,7 @@
             "title": "Red Bow Wreath",
             "image": "/images/wreath2.jpg",
             "description": "This wreath has a large red bow for extra Christmas cheer.",
-            "price": 25.99,
+            "price": 20.99,
             "productStyle": ["wreaths"]
         },
         {
@@ -61,7 +61,7 @@
             "title": "Farm Ornament",
             "image": "/images/ornament1.jpg",
             "description": "This Christmas ornament has a hand-painted farm scene.",
-            "price": 5.99,
+            "price": 7.99,
             "productStyle": ["ornaments"]
         },
         {
@@ -69,7 +69,7 @@
             "title": "Frosted Ornament",
             "image": "/images/ornament2.jpg",
             "description": "This frosted glass holiday ball has an snowflake design.",
-            "price": 7.99,
+            "price": 5.99,
             "productStyle": ["ornaments"]
         },
         {
