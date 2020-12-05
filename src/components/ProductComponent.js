@@ -15,7 +15,7 @@ export default class ProductComponent extends Component {
                                 <p>{product.description}</p>
                                 <p>{formatCurrency(product.price)}</p>
                             </CardFooter>
-                            <Button color='warning' style={{margin: '1rem'}}>
+                            <Button onClick={() => this.props.addToCart(product)} color='warning' style={{margin: '1rem'}}>
                                 Add To Cart
                             </Button> 
                         </CardBody>
@@ -24,7 +24,6 @@ export default class ProductComponent extends Component {
             );
         });
 
-    
         return (
             <div className='container'>
                 <div className='row'>

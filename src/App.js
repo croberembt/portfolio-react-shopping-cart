@@ -1,6 +1,7 @@
 import React from 'react'; 
 import ProductComponent from './components/ProductComponent';
 import FilterComponent from './components/FilterComponent';
+import CartComponent from './components/CartComponent';
 import data from './data.json'; 
 
 class App extends React.Component {
@@ -9,7 +10,8 @@ class App extends React.Component {
         this.state = {
             products: data.products,
             productStyle: '',
-            productSort: ''
+            productSort: '',
+            cartItems: []
         }
     }
 
@@ -26,12 +28,12 @@ class App extends React.Component {
                         return -1; 
                     }
                 } else if (productSort === 'highest') {
-                    if (a. price <= b.price) {
+                    if (a.price <= b.price) {
                         return 1;
                     } else {
                         return -1;
                     }
-                } else if (productSort === '') {
+                } else {
                     return state; 
                 }
             })
@@ -49,6 +51,22 @@ class App extends React.Component {
             })
         }
     };
+
+   addToCart = (product) => {
+       const cartItems = this.state.cartItems.slice(); 
+       let alreadyInCart = false;  
+       cartItems.forEach((item) => {
+            if (item._id === product._id) {
+                console.log(cartItems);
+                item.count++; 
+                alreadyInCart = true;
+            } else if (!alreadyInCart) {
+                console.log(cartItems); 
+                cartItems.push({...product, count: 1}); 
+           }
+        })
+        this.setState({cartItems})
+     }
 
     render() {
         return (
@@ -69,10 +87,15 @@ class App extends React.Component {
                                 /> 
                             </div>
                             <div className='col-8 main'>
-                                <ProductComponent products={this.state.products} />
+                                <ProductComponent 
+                                    products={this.state.products} 
+                                    addToCart={this.addToCart}
+                                />
                             </div>
                             <div className='col sidebar text-right' style={{color: 'white'}}>
-                                <h3>My Cart</h3>
+                                <CartComponent 
+                                    cartItems={this.state.cartItems}
+                                />
                             </div>
                         </div>
                     </div>
