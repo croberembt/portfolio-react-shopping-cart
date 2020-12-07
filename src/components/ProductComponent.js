@@ -6,7 +6,7 @@ export default class ProductComponent extends Component {
     render() {
         const productList = this.props.products.map(product => {
             return (
-                <div key={product._id} className='col-lg-6'>
+                <div key={product._id} className='col-md-6'>
                     <Card style={{marginBottom: '2rem'}}>
                         <CardBody>
                             <CardHeader className='text-center product-title'><a href='#'>{product.title}</a></CardHeader>

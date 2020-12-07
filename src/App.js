@@ -60,13 +60,14 @@ class App extends React.Component {
                 console.log(cartItems);
                 item.count++; 
                 alreadyInCart = true;
-            } else if (!alreadyInCart) {
-                console.log(cartItems); 
-                cartItems.push({...product, count: 1}); 
-           }
-        })
+            }
+        });
+        if (!alreadyInCart) {
+            console.log(cartItems); 
+            cartItems.push({...product, count: 1}); 
+        }
         this.setState({cartItems})
-     }
+    }
 
     render() {
         return (
@@ -77,7 +78,7 @@ class App extends React.Component {
                 <main>
                     <div className='container'>
                         <div className='row'>
-                            <div className='col-8 filter-section'>
+                            <div className='col-6 filter-section'>
                                 <FilterComponent 
                                     count={this.state.products.length} 
                                     productStyle={this.state.productStyle} 
@@ -86,15 +87,15 @@ class App extends React.Component {
                                     filterProducts={this.filterProducts}
                                 /> 
                             </div>
-                            <div className='col-8 main'>
+                            <div className='col-6 cart-style' style={{color: 'white'}}>
+                                <CartComponent 
+                                    cartItems={this.state.cartItems}
+                                />
+                            </div>
+                            <div className='col-12 main'>
                                 <ProductComponent 
                                     products={this.state.products} 
                                     addToCart={this.addToCart}
-                                />
-                            </div>
-                            <div className='col sidebar text-right' style={{color: 'white'}}>
-                                <CartComponent 
-                                    cartItems={this.state.cartItems}
                                 />
                             </div>
                         </div>

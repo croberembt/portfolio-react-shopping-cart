@@ -4,7 +4,7 @@
             "_id": "wreath1",
             "title": "Rustic Wreath",
             "image": "/images/wreath1.jpg",
-            "description": "This rustic wreath features dusted pine and large pinecones.",
+            "description": "This rustic wreath features dusted pine and pinecones.",
             "price": 25.99,
             "productStyle": ["wreaths"]
         },

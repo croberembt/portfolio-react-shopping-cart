@@ -52,10 +52,26 @@ header a {
     padding-top: 1rem;
 }
 
+.cart-empty {
+    font-weight: bold;
+    color: red; 
+}
+
+.cart-full {
+    font-weight: bold;
+    color: green; 
+}
+
+
 .filter-section {
     padding-top: 1rem;
     padding-bottom: 2rem;
     color: white;
+    text-align: center;
+}
+
+.cart-style {
+    padding-top: 2.5rem;
     text-align: center;
 }
 
