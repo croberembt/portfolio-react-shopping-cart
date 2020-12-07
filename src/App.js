@@ -69,6 +69,22 @@ class App extends React.Component {
         this.setState({cartItems})
     }
 
+    // below function is just a simple pop of the last item added currently, just a placeholder, will update function to only remove when product ids match
+
+    removeFromCart = (product) => {
+        const cartItems = this.state.cartItems.slice();  
+        let alreadyInCart = true;
+        cartItems.forEach((item) => {
+             if (item._id === product._id) {
+                 console.log(cartItems);
+                 item.count = 0; 
+                 alreadyInCart = false;
+                 cartItems.pop();
+             }
+         });
+         this.setState({cartItems})
+    }
+
     render() {
         return (
             <div className='container-fluid'>
@@ -78,7 +94,7 @@ class App extends React.Component {
                 <main>
                     <div className='container'>
                         <div className='row'>
-                            <div className='col-6 filter-section'>
+                            <div className='col-md-6 filter-section'>
                                 <FilterComponent 
                                     count={this.state.products.length} 
                                     productStyle={this.state.productStyle} 
@@ -87,9 +103,10 @@ class App extends React.Component {
                                     filterProducts={this.filterProducts}
                                 /> 
                             </div>
-                            <div className='col-6 cart-style' style={{color: 'white'}}>
+                            <div className='col-md-6 cart-style' style={{color: 'white'}}>
                                 <CartComponent 
                                     cartItems={this.state.cartItems}
+                                    removeFromCart={this.removeFromCart}
                                 />
                             </div>
                             <div className='col-12 main'>

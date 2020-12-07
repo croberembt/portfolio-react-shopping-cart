@@ -12,14 +12,14 @@ a:hover {
     text-decoration: none;
 }
 
+body, input, select, textarea {
+    font-family: 'Source Code Pro', monospace; 
+}
+
 body, #root {
     height: 100vh; 
     margin: 0;
     background-color: #68B2A0;
-}
-
-body, input, select, textarea {
-    font-family: 'Source Code Pro', monospace; 
 }
 
 footer {
@@ -36,6 +36,11 @@ header {
 
 header a {
     color: white;
+}
+
+select {
+    border-radius: 5px;
+    margin: .5rem;
 }
 
 /* classes */
@@ -57,15 +62,35 @@ header a {
     color: red; 
 }
 
+.cart-depiction img {
+    width: 25%;
+    height: auto;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    border-radius: 5%; 
+}
+
+.cart-depiction {
+    color: black;
+}
+
+.cart-depiction a {
+    color: green; 
+    font-weight: bold; 
+}
+
+.cart-depiction a:hover {
+    color: midnightblue;
+}
+
 .cart-full {
     font-weight: bold;
     color: green; 
 }
 
-
 .filter-section {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
     color: white;
     text-align: center;
 }
@@ -73,11 +98,6 @@ header a {
 .cart-style {
     padding-top: 2.5rem;
     text-align: center;
-}
-
-select {
-    border-radius: 5px;
-    margin: .5rem;
 }
 
 .filter-result {
