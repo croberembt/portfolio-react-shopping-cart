@@ -83,6 +83,13 @@ select {
     color: midnightblue;
 }
 
+.total-price {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+
 .cart-full {
     font-weight: bold;
     color: green; 

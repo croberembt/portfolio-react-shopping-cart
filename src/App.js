@@ -72,17 +72,8 @@ class App extends React.Component {
     // below function is just a simple pop of the last item added currently, just a placeholder, will update function to only remove when product ids match
 
     removeFromCart = (product) => {
-        const cartItems = this.state.cartItems.slice();  
-        let alreadyInCart = true;
-        cartItems.forEach((item) => {
-             if (item._id === product._id) {
-                 console.log(cartItems);
-                 item.count = 0; 
-                 alreadyInCart = false;
-                 cartItems.pop();
-             }
-         });
-         this.setState({cartItems})
+        const cartItems = this.state.cartItems.slice(); 
+        this.setState({cartItems: cartItems.filter(item => item._id !== product._id)})
     }
 
     render() {
