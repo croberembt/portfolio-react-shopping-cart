@@ -3,6 +3,18 @@ import { Card, CardHeader, Button, CardBody, CardFooter } from 'reactstrap';
 import formatCurrency from '../util'; 
 
 export default class CartComponent extends Component {
+    
+    constructor(props) {
+        super(props); 
+        this.state = {
+            showCheckout: false
+        }
+    }
+
+    handleInput = (event) => {
+        this.setState({[event.target.name]: event.target.value});
+    }
+
     render() {
         const cartList = this.props.cartItems.map(item => {
             return (
@@ -25,7 +37,7 @@ export default class CartComponent extends Component {
                     </Card>
                 </div>
             );
-        });
+        }); 
 
         return (
             <div>
@@ -49,7 +61,7 @@ export default class CartComponent extends Component {
                                         Total Price: {formatCurrency(this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0))}
                                     </CardHeader>
                                     <CardFooter>
-                                        <Button color='success' style={{fontWeight: 'bold'}}>
+                                        <Button onClick={() => {this.setState({showCheckout: true})}} color='success' style={{fontWeight: 'bold'}}>
                                             Proceed
                                         </Button>
                                     </CardFooter>
@@ -57,6 +69,27 @@ export default class CartComponent extends Component {
                             </Card>
                         </div> :
                         <div></div>
+                    }
+                </div>
+                <div>
+                    {
+                        this.state.showCheckout && 
+                        (
+                            <Card>
+                                <CardBody>
+                                    <Button onSubmit={this.createOrder}>Checkout</Button>
+                                    <div>
+                                        Email {/* onChange={this.handleInput}*/}
+                                    </div>
+                                    <div>
+                                        Name {/* onChange={this.handleInput}*/}
+                                    </div>
+                                    <div>
+                                        Address {/* onChange={this.handleInput}*/}
+                                    </div>
+                                </CardBody>
+                            </Card>
+                        )
                     }
                 </div>
             </div>

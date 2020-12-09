@@ -11,7 +11,7 @@ class App extends React.Component {
             products: data.products,
             productStyle: '',
             productSort: '',
-            cartItems: []
+            cartItems: JSON.parse(localStorage.getItem('cartItems')) ? JSON.parse(localStorage.getItem('cartItems')) : []
         }
     }
 
@@ -66,14 +66,17 @@ class App extends React.Component {
             console.log(cartItems); 
             cartItems.push({...product, count: 1}); 
         }
-        this.setState({cartItems})
+        this.setState({cartItems});
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }
 
     // below function is just a simple pop of the last item added currently, just a placeholder, will update function to only remove when product ids match
 
     removeFromCart = (product) => {
         const cartItems = this.state.cartItems.slice(); 
-        this.setState({cartItems: cartItems.filter(item => item._id !== product._id)})
+        this.setState({cartItems: cartItems.filter(item => item._id !== product._id)});
+        localStorage.setItem('cartItems', JSON.stringify(cartItems.filter(item => item._id !== product._id))
+        );
     }
 
     render() {
