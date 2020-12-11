@@ -7,12 +7,20 @@ export default class CartComponent extends Component {
     constructor(props) {
         super(props); 
         this.state = {
+            name: '',
+            email: '',
+            address: '',
             showCheckout: false
         }
     }
 
     handleInput = (event) => {
         this.setState({[event.target.name]: event.target.value});
+    }
+
+    handleSubmit(event) {
+        alert(this.state.value);
+        event.preventDefault();
     }
 
     render() {
@@ -76,18 +84,27 @@ export default class CartComponent extends Component {
                         this.state.showCheckout && 
                         (
                             <Card>
-                                <CardBody>
-                                    <Button onSubmit={this.createOrder}>Checkout</Button>
-                                    <div>
-                                        Email {/* onChange={this.handleInput}*/}
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className='container'>
+                                        <div className='row'>
+                                            <div className='col-8'>
+                                                <input name='email' type='email' required className='form-control' placeholder='Email' onChange={this.handleInput}></input>
+                                            </div>
+                                            <div className='col-4'></div>
+                                            <div className='col-8'>
+                                                <input name='name' type='text' required className='form-control' placeholder='Name' onChange={this.handleInput}></input>
+                                            </div>
+                                            <div className='col-4'></div>
+                                            <div className='col-8'>
+                                                <input name='address' type='text' required className='form-control' placeholder='Address'  onChange={this.handleInput}></input>
+                                            </div>
+                                            <div className='col-4'></div>
+                                            <div className='col-12'>
+                                                <Button color='success' onSubmit={this.createOrder} style={{fontWeight: 'bold', marginTop: '.5rem', marginBottom: '.5rem'}}>Checkout</Button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        Name {/* onChange={this.handleInput}*/}
-                                    </div>
-                                    <div>
-                                        Address {/* onChange={this.handleInput}*/}
-                                    </div>
-                                </CardBody>
+                                </form>
                             </Card>
                         )
                     }

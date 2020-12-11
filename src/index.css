@@ -22,6 +22,16 @@ body, #root {
     background-color: #68B2A0;
 }
 
+input {
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+}
+
+form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 footer {
     color: white;
     padding-top: 1rem;
