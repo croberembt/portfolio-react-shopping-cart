@@ -14,13 +14,20 @@ export default class CartComponent extends Component {
         }
     }
 
-    handleInput = (event) => {
+    handleInput = event => {
         this.setState({[event.target.name]: event.target.value});
     }
 
-    handleSubmit(event) {
-        alert(this.state.value);
+    createOrder = event => {
         event.preventDefault();
+        const order = {
+            name: this.state.name,
+            email: this.state.email,
+            address: this.state.address,
+            cartItems: this.props.cartItems
+        };
+        this.props.createOrder(order); 
+        alert(this.state);
     }
 
     render() {
@@ -84,7 +91,7 @@ export default class CartComponent extends Component {
                         this.state.showCheckout && 
                         (
                             <Card>
-                                <form onSubmit={this.handleSubmit}>
+                                <form onSubmit={this.createOrder}>
                                     <div className='container'>
                                         <div className='row'>
                                             <div className='col-8'>
@@ -100,7 +107,7 @@ export default class CartComponent extends Component {
                                             </div>
                                             <div className='col-4'></div>
                                             <div className='col-12'>
-                                                <Button color='success' onSubmit={this.createOrder} style={{fontWeight: 'bold', marginTop: '.5rem', marginBottom: '.5rem'}}>Checkout</Button>
+                                                <Button color='success' style={{fontWeight: 'bold', marginTop: '.5rem', marginBottom: '.5rem'}}>Checkout</Button>
                                             </div>
                                         </div>
                                     </div>

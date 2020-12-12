@@ -79,6 +79,11 @@ class App extends React.Component {
         );
     }
 
+    createOrder = order => {
+        this.setState(order); 
+        alert('Your order for ' + order.name + ' is being sent to ' + order.address);
+    }
+
     render() {
         return (
             <div className='container-fluid'>
@@ -101,6 +106,7 @@ class App extends React.Component {
                                 <CartComponent 
                                     cartItems={this.state.cartItems}
                                     removeFromCart={this.removeFromCart}
+                                    createOrder={this.createOrder}
                                 />
                             </div>
                             <div className='col-12 main'>
