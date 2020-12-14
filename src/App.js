@@ -11,7 +11,7 @@ class App extends React.Component {
             products: data.products,
             productStyle: '',
             productSort: '',
-            cartItems: JSON.parse(localStorage.getItem('cartItems')) ? JSON.parse(localStorage.getItem('cartItems')) : []
+            cartItems: JSON.parse(localStorage.getItem('cartItems')) ? JSON.parse(localStorage.getItem('cartItems')) : [],
         }
     }
 
