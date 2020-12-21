@@ -43,35 +43,29 @@ export default class ProductComponent extends Component {
             );
         });
 
-        const productSelect = this.props.products.map(product => {
-            return (
-                <Zoom top>
-                    <div key={product._id} className='col-md-6'>
-                        <Modal className='text-center product-title' isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                            <ModalBody>
-                                <ModalHeader toggle={this.toggleModal}>{product.title}</ModalHeader>
-                                <CardImg onClick={this.toggleModal} src={product.image} alt={product.description}></CardImg>
-                                <ModalFooter>
-                                    <p>{product.description}</p>
-                                    <p>{formatCurrency(product.price)}</p>
-                                </ModalFooter>
-                                <Button onClick={() => this.props.addToCart(product)} color='warning' style={{margin: '1rem'}}>
-                                    Add To Cart
-                                </Button> 
-                            </ModalBody>
-                        </Modal>
-                    </div>
-                </Zoom>
-            );
-        });
-
         return (
             <div className='container'>
                 <div className='row'>
                     {productList}
                 </div>
-                <div classname='row'>
-                    {productSelect}
+                <div className='row'>
+                    {
+                        <div className='col-md-6'>
+                            <Modal className='text-center product-title' isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                                <ModalBody>
+                                    <ModalHeader toggle={this.toggleModal}>{this.props.product.title}</ModalHeader>
+                                    <CardImg onClick={this.toggleModal} src={this.props.product.image} alt={this.props.product.description}></CardImg>
+                                    <ModalFooter>
+                                        <p>{this.props.product.description}</p>
+                                        <p>{formatCurrency(this.props.product.price)}</p>
+                                    </ModalFooter>
+                                    <Button onClick={() => this.props.addToCart(product)}  color='warning' style={{margin: '1rem'}}>
+                                        Add To Cart
+                                    </Button> 
+                                </ModalBody>
+                            </Modal>
+                        </div> 
+                    }
                 </div>
             </div>
         );
