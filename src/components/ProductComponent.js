@@ -52,8 +52,9 @@ export default class ProductComponent extends Component {
                 <div className='row'>
                     {product && ( 
                         <div className='col-md-6'> 
-                            <Modal className='text-center product-title' isOpen={true} onRequestClose={this.closeModal}>
+                            <Modal className='product-title' isOpen={true} onRequestClose={this.closeModal}>
                                 <ModalBody>
+                                    <Button className='float-right' onClick={() => this.closeModal()}>x</Button>
                                     <ModalHeader onClick={this.closeModal}>{product.title}</ModalHeader>
                                     <CardImg onClick={this.toggleModal} src={product.image} alt={product.description}></CardImg>
                                     <ModalFooter>
