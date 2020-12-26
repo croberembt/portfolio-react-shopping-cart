@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Button, Card, CardBody, CardHeader, CardImg, CardFooter, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import formatCurrency from '../util'; 
 import Fade from 'react-reveal/Fade';
+import {connect} from 'react-redux'; 
+import {fetchProducts} from '../actions/productActions'; 
 
-export default class ProductComponent extends Component {
+class ProductComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -73,3 +75,5 @@ export default class ProductComponent extends Component {
         );
     }
 }
+
+export default connect((state) => ({products: state.products}), {fetchProducts})(ProductComponent); 
