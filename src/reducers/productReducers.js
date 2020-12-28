@@ -1,6 +1,6 @@
 import {FETCH_PRODUCTS} from '../types'; 
 
-const productsReducer = (state = {}, action) => {
+export const productsReducer = (state = {}, action) => {
     
     switch (action.type) {
         case FETCH_PRODUCTS: 

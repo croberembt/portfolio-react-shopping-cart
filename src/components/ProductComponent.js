@@ -14,6 +14,10 @@ class ProductComponent extends Component {
         };
     }
 
+    componentDidMount() {
+        this.props.fetchProducts(); 
+    }
+
     openModal = (product) => {
         this.setState({product}); 
     }
@@ -76,4 +80,4 @@ class ProductComponent extends Component {
     }
 }
 
-export default connect((state) => ({products: state.products}), {fetchProducts})(ProductComponent); 
+export default connect((state) => ({products: state.products.items}), {fetchProducts}) (ProductComponent); 
