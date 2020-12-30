@@ -36,7 +36,7 @@ class ProductComponent extends Component {
                             !this.props.products ? (<div style={{fontWeight: 'bold', color: 'white'}}>Loading...</div>) :
                             <div className='row'>
                                 {this.props.products.map(product => 
-                                    <div className='col-md-6'>
+                                    <div className='col-md-6'> 
                                         <Card key={product._id} style={{marginBottom: '2rem'}}>
                                             <CardBody>
                                                 <CardHeader className='text-center product-title'><a href='#' onClick={() => this.openModal(product)}>{product.title}</a></CardHeader>
