@@ -4,17 +4,17 @@ export const productsReducer = (state = {}, action) => {
     
     switch (action.type) {
         case FETCH_PRODUCTS: 
-            return {items: action.payload};
+            return {items: action.payload, filteredItems: action.payload};
         case FILTER_PRODUCTS_BY_STYLE: 
             return {
                 ...state, 
-                style: action.payload.style,
+                productStyle: action.payload.productStyle,
                 filteredItems: action.payload.items
             };
         case SORT_PRODUCTS_BY_PRICE: 
             return {
                 ...state,
-                sort: action.payload.sort,
+                productSort: action.payload.productSort,
                 filteredItems: action.payload.items
             };
         default: 

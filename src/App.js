@@ -3,56 +3,15 @@ import ProductComponent from './components/ProductComponent';
 import FilterComponent from './components/FilterComponent';
 import CartComponent from './components/CartComponent';
 import { Provider } from 'react-redux'; 
-import data from './data.json'; 
 import store from './store';
 
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            products: data.products,
-            productStyle: '',
-            productSort: '',
             cartItems: JSON.parse(localStorage.getItem('cartItems')) ? JSON.parse(localStorage.getItem('cartItems')) : [],
         }
     }
-
-    sortProducts = (event) => {
-        const productSort = event.target.value;
-        console.log(event.target.value); 
-        this.setState((state) => ({
-            productSort: productSort,
-            products: this.state.products.slice().sort((a, b) => { 
-                if (productSort === 'lowest') { 
-                    if (a.price >= b.price) { 
-                        return 1; 
-                    } else {
-                        return -1; 
-                    }
-                } else if (productSort === 'highest') {
-                    if (a.price <= b.price) {
-                        return 1;
-                    } else {
-                        return -1;
-                    }
-                } else {
-                    return state; 
-                }
-            })
-        }));
-    };
-
-    filterProducts = (event) => {
-        console.log(event.target.value); 
-        if(event.target.value === '') {
-            this.setState({productStyle: event.target.value, products: data.products}); 
-        } else {
-            this.setState({
-                productStyle: event.target.value,
-                products: data.products.filter(product => (product.productStyle.indexOf(event.target.value) >= 0))
-            })
-        }
-    };
 
    addToCart = (product) => {
        const cartItems = this.state.cartItems.slice(); 
@@ -97,13 +56,7 @@ class App extends React.Component {
                         <div className='container'>
                             <div className='row'>
                                 <div className='col-md-6 filter-section'>
-                                    <FilterComponent 
-                                        count={this.state.products.length} 
-                                        productStyle={this.state.productStyle} 
-                                        productSort={this.state.productSort}
-                                        sortProducts={this.sortProducts}
-                                        filterProducts={this.filterProducts}
-                                    /> 
+                                    <FilterComponent /> 
                                 </div>
                                 <div className='col-md-6 cart-style' style={{color: 'white'}}>
                                     <CartComponent 
@@ -114,7 +67,6 @@ class App extends React.Component {
                                 </div>
                                 <div className='col-12 main'>
                                     <ProductComponent 
-                                        products={this.state.products} 
                                         addToCart={this.addToCart}
                                     />
                                 </div>
