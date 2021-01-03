@@ -4,6 +4,7 @@ import formatCurrency from '../util';
 import Fade from 'react-reveal/Fade';
 import {connect} from 'react-redux'; 
 import {fetchProducts} from '../actions/productActions'; 
+import {addToCart} from '../actions/cartActions'; 
 
 class ProductComponent extends Component {
 
@@ -81,4 +82,4 @@ class ProductComponent extends Component {
     }
 }
 
-export default connect((state) => ({products: state.products.filteredItems}), {fetchProducts,}) (ProductComponent); 
+export default connect((state) => ({products: state.products.filteredItems}), {fetchProducts, addToCart}) (ProductComponent); 

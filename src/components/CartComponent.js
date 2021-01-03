@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Card, CardHeader, Button, CardBody, CardFooter } from 'reactstrap';
 import formatCurrency from '../util'; 
 import Fade from 'react-reveal/Fade';
+import { connect } from 'react-redux';
+import {removeFromCart} from '../actions/cartActions'; 
 
-export default class CartComponent extends Component {
+class CartComponent extends Component {
     
     constructor(props) {
         super(props); 
@@ -125,3 +127,5 @@ export default class CartComponent extends Component {
         ); 
     }
 }
+
+export default connect(state => ({cartItems: state.cart.cartItems}), removeFromCart)(CartComponent); 
