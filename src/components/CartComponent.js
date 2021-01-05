@@ -3,7 +3,7 @@ import { Card, CardHeader, Button, CardBody, CardFooter } from 'reactstrap';
 import formatCurrency from '../util'; 
 import Fade from 'react-reveal/Fade';
 import { connect } from 'react-redux';
-//import {removeFromCart} from '../actions/cartActions'; 
+import {removeFromCart} from '../actions/cartActions'; 
 
 class CartComponent extends Component {
     
@@ -47,7 +47,7 @@ class CartComponent extends Component {
                                         <p>{formatCurrency(item.price)} x {item.count}</p>
                                     </div>
                                 </div>
-                                <Button /*onClick={() => this.props.removeFromCart(item)}*/ color='danger' style={{fontWeight: 'bold', marginBottom: '.5rem'}}>
+                                <Button onClick={() => this.props.removeFromCart(item)} color='danger' style={{fontWeight: 'bold', marginBottom: '.5rem'}}>
                                     Remove
                                 </Button> 
                             </div>
@@ -128,4 +128,4 @@ class CartComponent extends Component {
     }
 }
 
-export default connect(state => ({cartItems: state.cart.cartItems}), /*removeFromCart*/)(CartComponent); 
+export default connect(state => ({cartItems: state.cart.cartItems}), {removeFromCart})(CartComponent); 

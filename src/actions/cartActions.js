@@ -1,4 +1,4 @@
-import {ADD_TO_CART, /*REMOVE_FROM_CART*/} from '../types'; 
+import {ADD_TO_CART, REMOVE_FROM_CART} from '../types'; 
 
 export const addToCart = (product) => (dispatch, getState) => {
     
@@ -26,17 +26,15 @@ export const addToCart = (product) => (dispatch, getState) => {
 
 }
 
-//export const removeFromCart = (product) => (dispatch, getState) => {
+export const removeFromCart = (product) => (dispatch, getState) => {
     
-    //const cartItems = getState().cart.cartItems.slice().filter(x => x._id !== product._id); 
+    const cartItems = getState().cart.cartItems.slice().filter(x => x._id !== product._id);
 
-    //dispatch({
-      //  type: REMOVE_FROM_CART,
-       // payload: {cartItems}
-   // }); 
+    dispatch({
+        type: REMOVE_FROM_CART,
+        payload: {cartItems}
+    }); 
 
-   // localStorage.setItem('cartItems', JSON.stringify(cartItems)); 
+    localStorage.setItem('cartItems', JSON.stringify(cartItems)); 
 
-//}
-
-
+}
