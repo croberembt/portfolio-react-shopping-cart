@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, Button, CardBody, CardFooter } from 'reactstrap';
+import { Card, CardHeader, Button, CardBody, CardFooter, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import formatCurrency from '../util'; 
 import Fade from 'react-reveal/Fade';
 import { connect } from 'react-redux';
 import {removeFromCart} from '../actions/cartActions'; 
+import {createOrder, clearOrder} from '../actions/orderActions'; 
 
 class CartComponent extends Component {
     
@@ -27,10 +28,14 @@ class CartComponent extends Component {
             name: this.state.name,
             email: this.state.email,
             address: this.state.address,
-            cartItems: this.props.cartItems
+            cartItems: this.props.cartItems,
+            total: this.props.cartItems.reduce((a, c) => a + c.price*c.count, 0)
         };
         this.props.createOrder(order); 
-        alert(this.state);
+    }
+
+    closeModal = () => {
+        this.props.clearOrder(); 
     }
 
     render() {
@@ -62,9 +67,30 @@ class CartComponent extends Component {
                 <div>
                     <div>
                         {
-                        this.props.cartItems.length === 0 ? <Card><CardHeader className='cart-empty'>Your cart is empty, add some cheer!</CardHeader></Card> : 
-                        this.props.cartItems.length === 1 ? <Card><CardHeader className='cart-full'> You have {this.props.cartItems.length} decoration in your cart!</CardHeader></Card> : 
-                        <Card><CardHeader className='cart-full'>You have {this.props.cartItems.length} decorations in your cart!</CardHeader></Card>
+                            this.props.cartItems.length === 0 ? <Card><CardHeader className='cart-empty'>Your cart is empty, add some cheer!</CardHeader></Card> : 
+                            this.props.cartItems.length === 1 ? <Card><CardHeader className='cart-full'> You have {this.props.cartItems.length} decoration in your cart!</CardHeader></Card> : 
+                            <Card><CardHeader className='cart-full'>You have {this.props.cartItems.length} decorations in your cart!</CardHeader></Card>
+                        }
+                        {
+                            this.props.order && 
+                            <Modal isOpen={true} onRequestClose={this.closeModal}>
+                                <ModalBody className='order-modal'>
+                                    <Button className='float-right' onClick={this.closeModal}>x</Button>
+                                    <ModalHeader>Thanks {this.props.order.name}, we have received your order!</ModalHeader>
+                                    <div style={{padding: '1rem'}}>
+                                        <div>Reference Number: {this.props.order._id}</div>
+                                        <div>Shipping Address: {this.props.order.address}</div>
+                                        <div style={{paddingTop: '.5rem'}}> 
+                                            {this.props.order.cartItems.map(item => (
+                                                <div>
+                                                    {item.count} {'x'} {item.title}
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div style={{paddingTop: '.5rem'}}>Total: {formatCurrency(this.props.order.total)}</div>
+                                    </div>
+                                </ModalBody>
+                            </Modal>
                         }
                     </div>
                     <div>
@@ -128,4 +154,4 @@ class CartComponent extends Component {
     }
 }
 
-export default connect(state => ({cartItems: state.cart.cartItems}), {removeFromCart})(CartComponent); 
+export default connect(state => ({order: state.order.order, cartItems: state.cart.cartItems}), {removeFromCart, createOrder, clearOrder})(CartComponent); 
