@@ -22,20 +22,15 @@ body, #root {
     background-color: #68B2A0;
 }
 
-input {
-    margin-bottom: .5rem;
-    margin-top: .5rem;
+footer {
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 form {
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
-
-footer {
-    color: white;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
 header {
@@ -48,6 +43,11 @@ header a {
     color: white;
 }
 
+input {
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+}
+
 select {
     border-radius: 5px;
     margin: .5rem;
@@ -57,23 +57,6 @@ select {
 
 .card-title {
     color: 'red';
-}
-
-.footer-copyright {
-    text-align: center;
-}
-
-.cart-empty {
-    font-weight: bold;
-    color: red; 
-}
-
-.cart-depiction img {
-    width: 25%;
-    height: auto;
-    margin-top: .5rem;
-    margin-left: .5rem;
-    border-radius: 5%; 
 }
 
 .cart-depiction {
@@ -89,14 +72,31 @@ select {
     color: midnightblue;
 }
 
-.cart-style {
-    padding-top: 2.5rem;
-    text-align: center;
+.cart-depiction img {
+    width: 25%;
+    height: auto;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    border-radius: 5%; 
+}
+
+.cart-empty {
+    font-weight: bold;
+    color: red; 
 }
 
 .cart-full {
     font-weight: bold;
     color: green; 
+}
+
+.cart-style {
+    padding-top: 2.5rem;
+    text-align: center;
+}
+
+.filter-result {
+    margin-bottom: .5rem;
 }
 
 .filter-section {
@@ -106,8 +106,8 @@ select {
     text-align: center;
 }
 
-.filter-result {
-    margin-bottom: .5rem;
+.footer-copyright {
+    text-align: center;
 }
 
 .main {
@@ -138,5 +138,3 @@ select {
     color: green;
     font-weight: bold;
 }
-
-/* ids */

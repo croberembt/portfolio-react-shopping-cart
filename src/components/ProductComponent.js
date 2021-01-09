@@ -58,7 +58,8 @@ class ProductComponent extends Component {
                     </Fade>
                 </div>
                 <div className='row'>
-                    {product && ( 
+                    {
+                        product && 
                         <div> 
                             <Modal className='product-title' isOpen={true} onRequestClose={this.closeModal}>
                                 <ModalBody>
@@ -75,7 +76,7 @@ class ProductComponent extends Component {
                                 </ModalBody>
                             </Modal>
                         </div> 
-                    )}
+                    }
                 </div>
             </div>
         );

@@ -6,7 +6,9 @@ class FilterComponent extends Component {
     render() {
         return (
             !this.props.filteredProducts ? 
-            <div style={{fontWeight: 'bold', color: 'white'}}>Loading...</div>
+            <div style={{fontWeight: 'bold', color: 'white'}}>
+                Loading...
+            </div>
             :
             <div className='filter'>
                 <div className='filter-result'>{this.props.filteredProducts.length} Decorations</div>
@@ -34,14 +36,5 @@ class FilterComponent extends Component {
 }
 
 export default connect(
-    (state) => ({
-        productStyle: state.products.productStyle,
-        productSort: state.products.productSort,
-        products: state.products.items,
-        filteredProducts: state.products.filteredItems
-    }), 
-    {
-        filterProducts,
-        sortProducts
-    }
-)(FilterComponent); 
+    (state) => ({productStyle: state.products.productStyle, productSort: state.products.productSort, products: state.products.items, 
+    filteredProducts: state.products.filteredItems}), {filterProducts, sortProducts})(FilterComponent); 

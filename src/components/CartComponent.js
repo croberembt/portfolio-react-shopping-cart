@@ -67,9 +67,21 @@ class CartComponent extends Component {
                 <div>
                     <div>
                         {
-                            this.props.cartItems.length === 0 ? <Card><CardHeader className='cart-empty'>Your cart is empty, add some cheer!</CardHeader></Card> : 
-                            this.props.cartItems.length === 1 ? <Card><CardHeader className='cart-full'> You have {this.props.cartItems.length} decoration in your cart!</CardHeader></Card> : 
-                            <Card><CardHeader className='cart-full'>You have {this.props.cartItems.length} decorations in your cart!</CardHeader></Card>
+                            this.props.cartItems.length === 0 ? 
+                            <Card>
+                                <CardHeader className='cart-empty'>Your cart is empty, add some cheer!
+                                </CardHeader>
+                            </Card> 
+                            : 
+                            this.props.cartItems.length === 1 ? 
+                            <Card>
+                                <CardHeader className='cart-full'> You have {this.props.cartItems.length} decoration in your cart!
+                                </CardHeader>
+                            </Card> 
+                            : 
+                            <Card>
+                                <CardHeader className='cart-full'>You have {this.props.cartItems.length} decorations in your cart!</CardHeader>
+                            </Card>
                         }
                         {
                             this.props.order && 
@@ -79,6 +91,7 @@ class CartComponent extends Component {
                                     <ModalHeader>Thanks {this.props.order.name}, we have received your order!</ModalHeader>
                                     <div style={{padding: '1rem'}}>
                                         <div>Reference Number: {this.props.order._id}</div>
+                                        <div>Order Date: {this.props.order.createdAt}</div>
                                         <div>Shipping Address: {this.props.order.address}</div>
                                         <div style={{paddingTop: '.5rem'}}> 
                                             {this.props.order.cartItems.map(item => (
@@ -119,33 +132,31 @@ class CartComponent extends Component {
                     <div>
                         {
                             this.state.showCheckout && 
-                            (
-                                <Fade bottom>
-                                    <Card>
-                                        <form onSubmit={this.createOrder}>
-                                            <div className='container'>
-                                                <div className='row'>
-                                                    <div className='col-8'>
-                                                        <input name='email' type='email' required className='form-control' placeholder='Email' onChange={this.handleInput}></input>
-                                                    </div>
-                                                    <div className='col-4'></div>
-                                                    <div className='col-8'>
-                                                        <input name='name' type='text' required className='form-control' placeholder='Name' onChange={this.handleInput}></input>
-                                                    </div>
-                                                    <div className='col-4'></div>
-                                                    <div className='col-8'>
-                                                        <input name='address' type='text' required className='form-control' placeholder='Address'  onChange={this.handleInput}></input>
-                                                    </div>
-                                                    <div className='col-4'></div>
-                                                    <div className='col-12'>
-                                                        <Button color='success' style={{fontWeight: 'bold', marginTop: '.5rem', marginBottom: '.5rem'}}>Checkout</Button>
-                                                    </div>
+                            <Fade bottom>
+                                <Card>
+                                    <form onSubmit={this.createOrder}>
+                                        <div className='container'>
+                                            <div className='row'>
+                                                <div className='col-8'>
+                                                    <input name='email' type='email' required className='form-control' placeholder='Email' onChange={this.handleInput}></input>
+                                                </div>
+                                                <div className='col-4'></div>
+                                                <div className='col-8'>
+                                                    <input name='name' type='text' required className='form-control' placeholder='Name' onChange={this.handleInput}></input>
+                                                </div>
+                                                <div className='col-4'></div>
+                                                <div className='col-8'>
+                                                    <input name='address' type='text' required className='form-control' placeholder='Address'  onChange={this.handleInput}></input>
+                                                </div>
+                                                <div className='col-4'></div>
+                                                <div className='col-12'>
+                                                    <Button color='success' style={{fontWeight: 'bold', marginTop: '.5rem', marginBottom: '.5rem'}}>Checkout</Button>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </Card>
-                                </Fade>
-                            )
+                                        </div>
+                                    </form>
+                                </Card>
+                            </Fade>
                         }
                     </div>
                 </div>
