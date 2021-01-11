@@ -7,6 +7,9 @@ export default class HomeScreen extends Component {
     render() {
         return (
             <div className='container'>
+                <div>
+                    <h3 className='text-center' style={{marginBottom: '1rem', color: 'white'}}>Christmas Decor Online Store</h3>
+                </div>
                 <div className='row'>
                     <div className='col-md-6 filter-section'>
                         <FilterComponent /> 

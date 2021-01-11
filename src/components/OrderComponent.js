@@ -22,7 +22,7 @@ class OrderComponent extends Component {
                         :
                         <div>
                             <div>
-                                <h3 className='text-center' style={{marginBottom: '1rem', color: 'white'}}>Order History</h3>
+                                <h3 className='text-center' style={{marginBottom: '2.5rem', color: 'white'}}>Order History</h3>
                             </div>
                             <Table responsive bordered hover size='sm'>
                                 <thead>

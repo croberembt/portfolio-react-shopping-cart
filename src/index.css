@@ -114,6 +114,10 @@ select {
     padding-top: 1rem;
 } 
 
+.nav-link {
+    color: red;
+}
+
 .order-modal {
     background-color: #68B2A0;
     color: white;
