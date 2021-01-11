@@ -6,7 +6,10 @@ const shortid = require('shortid');
 const app = express();
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/react-shopping-cart-database', {
+app.use('/', express.static(__dirname + '/build'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/build/index.html')); 
+
+mongoose.connect(process.env.MONDOB_URL || 'mongodb://localhost/react-shopping-cart-database', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
