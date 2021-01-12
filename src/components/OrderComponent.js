@@ -16,7 +16,7 @@ class OrderComponent extends Component {
                 <div className='container'>
                     {
                         !this.props.orders ? 
-                        <div>
+                        <div style={{fontWeight: 'bold', color: 'white'}}>
                             ...Loading
                         </div>
                         :
