@@ -16,7 +16,7 @@ class App extends React.Component {
                         <Navbar dark expand='xs'>
                             <Nav navbar>
                                 <NavItem style={{paddingRight: '.5rem', paddingBottom:'.5rem'}}>
-                                    <NavLink className='nav-link' to='/home'>
+                                    <NavLink className='nav-link' to='/'>
                                         <i className='fa fa-home fa-lg' /> Home
                                     </NavLink>
                                 </NavItem>
@@ -29,8 +29,8 @@ class App extends React.Component {
                         </Navbar>
                         <main>
                             <Route path='/admin' component={AdminScreen} />
-                            <Route path='/home' component={HomeScreen} exact />
-                            <Redirect to='/home' />
+                            <Route path='/' component={HomeScreen} exact />
+                            <Redirect to='/' />
                         </main>
                         <footer>
                             <div className='container-fluid'>
