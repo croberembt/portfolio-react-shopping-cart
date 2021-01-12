@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/build'));
 app.get('/', (req, res) => res.sendFile(__dirname + '/build/index.html')); 
 
-mongoose.connect(process.env.MONDODB_URL || 'mongodb://localhost/react-shopping-cart-database', {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/react-shopping-cart-database', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
