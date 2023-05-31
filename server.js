@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const shortid = require('shortid'); 
 
-const app = express();
+const app = express();// test
 app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/build'));
